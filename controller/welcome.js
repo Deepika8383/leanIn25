@@ -5,3 +5,6 @@ const welcome= (req, res)=>{
         return res.status(500).json({error: error.message});
     }
 }
+module.exports={
+    welcome
+}
