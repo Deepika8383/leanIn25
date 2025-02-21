@@ -10,7 +10,16 @@ const otpSchema = new mongoose.Schema({
 });
 
 const OTP = mongoose.model('OTP', otpSchema);
+const dataSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    phoneNo: { type: String, required: true },
+    medicines: { type: [mongoose.Schema.Types.Mixed] },
+    appointments: { type: [mongoose.Schema.Types.Mixed], default: null },
+    email: { type: String, default: Date.now }
+});
+const data = mongoose.model('Data', dataSchema);
 
 module.exports = {
     OTP,
+    data
 };
